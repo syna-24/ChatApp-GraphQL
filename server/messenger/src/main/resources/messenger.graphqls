@@ -1,0 +1,10 @@
+# ----
+# User
+
+type User {
+    id: ID!
+    email: String!
+    username: String!
+    firstName: String!
+    phone: String!
+}

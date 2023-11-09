@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    container_name: "mysql"
+    volumes:
+      - "./db:/var/lib/mysql"
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=messenger
+      - MYSQL_USER=longquoc
+      - MYSQL_PASSWORD=123456
+#  web:
+#    build: src
+#    links:
+#      - mysql
+#    container_name: Messenger
+#    restart: on-failure
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - DB_PORT=3306
+#      - DB_NAME=messenger
+#      - DB_HOST=mysql
+#      - MYSQL_USER=longquoc
+#      - MYSQL_USER_PASSWORD=123456
+#      - SPRING_PROFILES_ACTIVE=prod
+#    depends_on:
+#      - mysql
